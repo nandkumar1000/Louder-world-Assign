@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #E5E9F5;
+  --primary-100: #C2CDEA;
+  --primary-200: #9EB2DE;
+  --primary-300: #7A96D2;
+  --primary-400: #567AC7;
+  --primary-500: #3B5998;
+  --primary-600: #314A80;
+  --primary-700: #273C69;
+  --primary-800: #1E2D51;
+  --primary-900: #141F3A;
+
+  --accent-50: #FFF9E0;
+  --accent-100: #FFF1B3;
+  --accent-200: #FFE980;
+  --accent-300: #FFE04D;
+  --accent-400: #FFD81A;
+  --accent-500: #FFD700;
+  --accent-600: #E6C200;
+  --accent-700: #BFA000;
+  --accent-800: #997D00;
+  --accent-900: #735E00;
+
+  --success-500: #10B981;
+  --warning-500: #F59E0B;
+  --error-500: #EF4444;
+
+  --neutral-50: #F9FAFB;
+  --neutral-100: #F3F4F6;
+  --neutral-200: #E5E7EB;
+  --neutral-300: #D1D5DB;
+  --neutral-400: #9CA3AF;
+  --neutral-500: #6B7280;
+  --neutral-600: #4B5563;
+  --neutral-700: #374151;
+  --neutral-800: #1F2937;
+  --neutral-900: #111827;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-neutral-50 text-neutral-800;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  @apply font-semibold;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent-500 text-neutral-800 hover:bg-accent-600;
+  }
+  
+  .btn-outline {
+    @apply border border-neutral-300 bg-transparent hover:bg-neutral-100;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .card {
+    @apply rounded-lg bg-white shadow-md transition-all hover:shadow-lg;
+  }
+}
